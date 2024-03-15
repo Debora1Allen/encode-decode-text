@@ -10,7 +10,12 @@
     <textarea id="plainTextEncoder" rows="4" cols="50"></textarea><br>
     <label for="encodingScheme">Selecione o Tipo de Codificação:</label>
     <select id="encodingSchemeEncoder">
-        <option value="reverse">Reverse Alphabet</option>
+        <option value="reverse">Alfabeto reverso</option>
+        <option value="caesar">Cifra de César</option>
+        <option value="atbash">Cifra Atbash</option>
+        <option value="rot13">Rot13</option>
+        <option value="morse">Morse</option>
+        <option value="binary">Codificação Binária</option>
     </select><br>
     <button onclick="encodeText()">Codificar</button><br>
     <textarea id="encodedTextEncoder" rows="4" cols="50" readonly></textarea>

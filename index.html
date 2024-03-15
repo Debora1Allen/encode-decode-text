@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encoder and Decoder</title>
+</head>
+<body>
+    <h2>Codificar Texto</h2>
+    <textarea id="plainTextEncoder" rows="4" cols="50"></textarea><br>
+    <label for="encodingScheme">Selecione o Tipo de Codificação:</label>
+    <select id="encodingSchemeEncoder">
+        <option value="reverse">Reverse Alphabet</option>
+    </select><br>
+    <button onclick="encodeText()">Codificar</button><br>
+    <textarea id="encodedTextEncoder" rows="4" cols="50" readonly></textarea>
+
+    <h2>Decodificar Texto</h2>
+    <textarea id="encodedTextDecoder" rows="4" cols="50"></textarea><br>
+    <label for="encodingScheme">Selecione o Tipo de Decodificação:</label>
+    <select id="encodingSchemeDecoder">
+        <option value="reverse">Reverse Alphabet</option>
+    </select><br>
+    <button onclick="decodeText()">Decodificar</button><br>
+    <textarea id="decodedTextDecoder" rows="4" cols="50" readonly></textarea>
+
+    <script src="script.js"></script>
+</body>
+</html>

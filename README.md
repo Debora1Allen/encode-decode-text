@@ -27,7 +27,7 @@ Este é um aplicativo da web simples que permite codificar e decodificar texto u
 
 
 URL
-
+<a href="https://debora1allen.github.io/encode-decode-text/" target="_blank">Clique aqui para ir para a aplicação</a>
 
 ## Instalação
 

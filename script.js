@@ -81,3 +81,22 @@ function reverseAlphabet(text) {
 
     return result;
 }
+
+function showErrorModal(message) {
+    const modal = document.getElementById('errorModal');
+    const errorMessage = document.getElementById('errorMessage');
+    errorMessage.textContent = message;
+    modal.style.display = 'block';
+    const closeBtn = document.getElementsByClassName('close')[0];
+    closeBtn.onclick = function() {
+      modal.style.display = 'none';
+    };
+  
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+  }
+  
+  

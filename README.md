@@ -33,10 +33,6 @@ URL
 
 Nenhuma instalação é necessária. Basta abrir o arquivo `index.html` em seu navegador para usar o aplicativo.
 
-## Contribuindo
-
-Contribuições são bem-vindas! Se você gostaria de contribuir com este projeto, bifurque o repositório e envie uma solicitação pull.
-
 ## Licença
 [MIT](https://github.com/Debora1Allen)©[2024 debora1allen](https://github.com/Debora1Allen)
 

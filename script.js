@@ -1,3 +1,4 @@
+
 const encodingFunctions = {
     'base64': {
         encode: (text) => btoa(text),
@@ -57,9 +58,9 @@ function caesarCipher(text, decrypt = false, shift = 3) {
         if (index !== -1) {
             index = (decrypt ? index - shift : index + shift + 26) % 26;
             result += text[i] === text[i].toUpperCase() ? alphabet[index].toUpperCase() : alphabet[index];
-        } else {
-            throw new Error('A cifra de César suporta apenas letras.');
-        }
+        } 
+          return  result += char;
+       
     }
 
     return result;
@@ -75,13 +76,14 @@ function reverseAlphabet(text) {
         let index = alphabet.indexOf(char);
         if (index !== -1) {
             result += text[i] === text[i].toUpperCase() ? reversedAlphabet[index].toUpperCase() : reversedAlphabet[index];
-        } else {
-            throw new Error('O alfabeto reverso suporta apenas letras.');
-        }
+        } 
+           return result += char; 
+
     }
 
     return result;
 }
+
 function showErrorModal(message) {
     const modal = document.getElementById('errorModal');
     const errorMessage = document.getElementById('errorMessage');

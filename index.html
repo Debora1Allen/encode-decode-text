@@ -4,29 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Encoder and Decoder</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Encode Text</h2>
-    <textarea id="plainTextEncoder" rows="4" cols="50"></textarea><br>
-    <label for="encodingScheme">Select Encoding Scheme:</label>
-    <select id="encodingSchemeEncoder">
-        <option value="base64">Base64</option>
-        <option value="url">Url</option>
-        <option value="utf8">UTF8</option>
-    </select><br>
-    <button onclick="encodeText()">Encode</button><br>
-    <textarea id="encodedTextEncoder" rows="4" cols="50" readonly></textarea>
+    <div class="container">
+        <div class="section">
+            <div class="card">
+                <h2>Encode Text</h2>
+                <textarea id="plainTextEncoder" class="textarea" rows="4" cols="50"></textarea>
+                <label for="encodingSchemeEncoder">Select Encoding Scheme:</label>
+                <select id="encodingSchemeEncoder" class="select">
+                    <option value="base64">Base64</option>
+                    <option value="caesar">Caesar's Cipher</option>
+                    <option value="reverse">Reverse Alphabet</option>
+                </select>
+                <button onclick="encodeText()" class="button">Encode</button>
+                <textarea id="encodedTextEncoder" class="textarea result" rows="4" cols="50" readonly></textarea>
+            </div>
+        </div>
 
-    <h2>Decode Text</h2>
-    <textarea id="encodedTextDecoder" rows="4" cols="50"></textarea><br>
-    <label for="encodingScheme">Select Decoding Scheme:</label>
-    <select id="encodingSchemeDecoder">
-        <option value="base64">Base64</option>
-        <option value="url">Url</option>
-        <option value="utf8">UTF8</option>
-    </select><br>
-    <button onclick="decodeText()">Decode</button><br>
-    <textarea id="decodedTextDecoder" rows="4" cols="50" readonly></textarea>
+        <div class="section">
+            <div class="card">
+            <h2>Decode Text</h2>
+            <textarea id="encodedTextDecoder" class="textarea" rows="4" cols="50"></textarea>
+            <label for="encodingSchemeDecoder">Select Decoding Scheme:</label>
+            <select id="encodingSchemeDecoder" class="select">
+                <option value="base64">Base64</option>
+                <option value="caesar">Caesar's Cipher</option>
+                <option value="reverse">Reverse Alphabet</option>
+            </select>
+            <button onclick="decodeText()" class="button">Decode</button>
+            <textarea id="decodedTextDecoder" class="textarea result" rows="4" cols="50" readonly></textarea>
+        </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

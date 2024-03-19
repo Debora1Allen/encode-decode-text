@@ -5,13 +5,13 @@ function encodeText() {
 
     switch (encodingScheme) {
         case 'base64':
-            encodedText = Base64.encode(plainText);
+            encodedText = btoa(plainText);
             break;
-        case 'url':
-            encodedText = encodeURI(plainText);
+        case 'caesar':
+            encodedText = caesarCipher(plainText);
             break;
-        case 'html':
-            encodedText = htmlEncode(plainText);
+        case 'reverse':
+            encodedText = reverseAlphabet(plainText);
             break;
         default:
             console.error('Invalid encoding scheme');
@@ -27,13 +27,13 @@ function decodeText() {
 
     switch (encodingScheme) {
         case 'base64':
-            decodedText = Base64.decode(encodedText);
+            decodedText = atob(encodedText);
             break;
-        case 'url':
-            decodedText = decodeURI(encodedText);
+        case 'caesar':
+            decodedText = caesarCipher(encodedText, true);
             break;
-        case 'html':
-            decodedText = htmlDecode(encodedText);
+        case 'reverse':
+            decodedText = reverseAlphabet(encodedText);
             break;
         default:
             console.error('Invalid decoding scheme');
@@ -42,15 +42,43 @@ function decodeText() {
     document.getElementById('decodedTextDecoder').value = decodedText;
 }
 
+function caesarCipher(text, decrypt = false, shift = 3) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let result = '';
 
-function htmlEncode(str) {
-    return str.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-        return '&#' + i.charCodeAt(0) + ';';
-    });
+    for (let i = 0; i < text.length; i++) {
+        let char = text[i];
+        if (alphabet.includes(char.toLowerCase())) {
+            let index = alphabet.indexOf(char.toLowerCase());
+            if (decrypt) {
+                index = (index - shift + 26) % 26;
+            } else {
+                index = (index + shift) % 26;
+            }
+            result += char === char.toUpperCase() ? alphabet[index].toUpperCase() : alphabet[index];
+        } else {
+            result += char;
+        }
+    }
+
+    return result;
 }
 
-function htmlDecode(str) {
-    return str.replace(/&#(\d+);/g, function(match, dec) {
-        return String.fromCharCode(dec);
-    });
+function reverseAlphabet(text) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const reversedAlphabet = alphabet.split('').reverse().join('');
+    let result = '';
+
+    for (let i = 0; i < text.length; i++) {
+        let char = text[i];
+        let index = alphabet.indexOf(char.toLowerCase());
+        if (index !== -1) {
+            result += char === char.toUpperCase() ? reversedAlphabet[index].toUpperCase() : reversedAlphabet[index];
+        } else {
+            result += char;
+        }
+    }
+
+    return result;
 }
+

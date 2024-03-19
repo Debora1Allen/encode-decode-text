@@ -109,17 +109,20 @@ body {
 }
 
   .modal-content {
-    background-color: #fefefe;
+    background-color: #d18f96;
+    color: #FFF;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 30%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight:bolder;
   }
   
   .close {
-    color: #aaa;
+    color: #575252;
     float: right;
     font-size: 28px;
     font-weight: bold;

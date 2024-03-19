@@ -22,7 +22,7 @@ function encodeText() {
         document.getElementById('encodedTextEncoder').value = encodedText;
     } catch (error) {
         console.error('Error encoding text:', error.message);
-        document.getElementById('encodedTextEncoder').value = 'Error: ' + error.message;
+        showErrorModal(error.message);
     }
 }
 
@@ -35,7 +35,7 @@ function decodeText() {
         document.getElementById('decodedTextDecoder').value = decodedText;
     } catch (error) {
         console.error('Error decoding text:', error.message);
-        document.getElementById('decodedTextDecoder').value = 'Error: ' + error.message;
+        showErrorModal(error.message);
     }
 }
 
@@ -57,7 +57,7 @@ function caesarCipher(text, decrypt = false, shift = 3) {
             index = (decrypt ? index - shift : index + shift + 26) % 26;
             result += text[i] === text[i].toUpperCase() ? alphabet[index].toUpperCase() : alphabet[index];
         } else {
-            result += char;
+            throw new Error('A cifra de César suporta apenas letras.');
         }
     }
 
@@ -75,13 +75,12 @@ function reverseAlphabet(text) {
         if (index !== -1) {
             result += text[i] === text[i].toUpperCase() ? reversedAlphabet[index].toUpperCase() : reversedAlphabet[index];
         } else {
-            result += char;
+            throw new Error('O alfabeto reverso suporta apenas letras.');
         }
     }
 
     return result;
 }
-
 function showErrorModal(message) {
     const modal = document.getElementById('errorModal');
     const errorMessage = document.getElementById('errorMessage');

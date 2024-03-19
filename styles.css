@@ -135,3 +135,26 @@ body {
     cursor: pointer;
   }
   
+.find-out-more{
+    background-color: rgb(5, 192, 176);
+    position: relative;
+    top: 250px;
+    right: 700px;
+}
+
+.info-section {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section p {
+    text-align: justify;
+}

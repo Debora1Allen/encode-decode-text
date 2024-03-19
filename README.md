@@ -20,14 +20,14 @@ Este é um aplicativo da web simples que permite codificar e decodificar texto u
 
 ## Aplicação
 
-![Captura de tela 1](images/screenshot1.png)
-<!-- Insira a captura de tela aqui -->
+![Captura de tela 1](./assests/cards.png)
 
-![Captura de tela 2](images/screenshot2.png)
-<!-- Insira a captura de tela aqui -->
+
+![Captura de tela 2](./assests/info.png)
+
 
 URL
-<!-- Add your application URL here -->
+
 
 ## Instalação
 

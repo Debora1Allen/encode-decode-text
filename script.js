@@ -1,4 +1,3 @@
-
 const encodingFunctions = {
     'base64': {
         encode: (text) => btoa(text),
@@ -21,6 +20,7 @@ function encodeText() {
     try {
         const encodedText = encodingFunctions[encodingScheme].encode(plainText);
         document.getElementById('encodedTextEncoder').value = encodedText;
+        return;
     } catch (error) {
         console.error('Error encoding text:', error.message);
         showErrorModal(error.message);
@@ -34,12 +34,12 @@ function decodeText() {
     try {
         const decodedText = encodingFunctions[encodingScheme].decode(encodedText);
         document.getElementById('decodedTextDecoder').value = decodedText;
+        return;
     } catch (error) {
         console.error('Error decoding text:', error.message);
         showErrorModal(error.message);
     }
 }
-
 
 function clearInputs() {
     document.getElementById('plainTextEncoder').value = '';
@@ -47,7 +47,6 @@ function clearInputs() {
     document.getElementById('encodedTextDecoder').value = '';
     document.getElementById('decodedTextDecoder').value = '';
 }
-
 function caesarCipher(text, decrypt = false, shift = 3) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     let result = '';
@@ -55,14 +54,18 @@ function caesarCipher(text, decrypt = false, shift = 3) {
     for (let i = 0; i < text.length; i++) {
         let char = text[i].toLowerCase();
         let index = alphabet.indexOf(char);
-        if (index !== -1) {
+
+        if (index === -1) {
+            if (/[a-zA-Z]/.test(text[i])) {
+                result += char;
+            } else {
+                result += text[i];
+            }
+        } else {
             index = (decrypt ? index - shift : index + shift + 26) % 26;
             result += text[i] === text[i].toUpperCase() ? alphabet[index].toUpperCase() : alphabet[index];
-        } 
-          return  result += char;
-       
+        }
     }
-
     return result;
 }
 
@@ -74,15 +77,20 @@ function reverseAlphabet(text) {
     for (let i = 0; i < text.length; i++) {
         let char = text[i].toLowerCase();
         let index = alphabet.indexOf(char);
-        if (index !== -1) {
+
+        if (index === -1) {
+            if (/[a-zA-Z]/.test(text[i])) {
+                result += char;
+            } else {
+                result += text[i];
+            }
+        } else {
             result += text[i] === text[i].toUpperCase() ? reversedAlphabet[index].toUpperCase() : reversedAlphabet[index];
-        } 
-           return result += char; 
-
+        }
     }
-
     return result;
 }
+
 
 function showErrorModal(message) {
     const modal = document.getElementById('errorModal');
@@ -99,13 +107,13 @@ function showErrorModal(message) {
         modal.style.display = 'none';
       }
     };
-  }
-  
-  function toggleInfoSection() {
+}
+
+function toggleInfoSection() {
     const infoSection = document.getElementById('infoSection');
     if (infoSection.style.display === 'none' || infoSection.style.display === '') {
         infoSection.style.display = 'block';
-    } else {
-        infoSection.style.display = 'none';
-    }
+        return;
+    } 
+    infoSection.style.display = 'none';
 }

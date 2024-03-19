@@ -42,6 +42,13 @@ function decodeText() {
     document.getElementById('decodedTextDecoder').value = decodedText;
 }
 
+function clearInputs() {
+    document.getElementById('plainTextEncoder').value = '';
+    document.getElementById('encodedTextEncoder').value = '';
+    document.getElementById('encodedTextDecoder').value = '';
+    document.getElementById('decodedTextDecoder').value = '';
+}
+
 function caesarCipher(text, decrypt = false, shift = 3) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     let result = '';

@@ -25,20 +25,21 @@
 
         <div class="section">
             <div class="card">
-            <h2>Decodificar Texto:</h2>
-            <textarea id="encodedTextDecoder" class="textarea" rows="4" cols="50"></textarea>
-            <label for="encodingSchemeDecoder">Selecione o Tipo:</label>
-            <select id="encodingSchemeDecoder" class="select">
-                <option value="base64">Base64</option>
-                <option value="caesar">Cifra da César</option>
-                <option value="reverse">Alfabeto Reverso</option>
-            </select>
-            <button onclick="decodeText()" class="button">Decodificar</button>
-            <textarea id="decodedTextDecoder" class="textarea result" rows="4" cols="50" readonly></textarea>
-        </div>
-        <button class="clear-button" onclick="clearInputs()" class="button">Limpar Buscas</button>
+                <h2>Decodificar Texto:</h2>
+                <textarea id="encodedTextDecoder" class="textarea" rows="4" cols="50"></textarea>
+                <label for="encodingSchemeDecoder">Selecione o Tipo:</label>
+                <select id="encodingSchemeDecoder" class="select">
+                    <option value="base64">Base64</option>
+                    <option value="caesar">Cifra da César</option>
+                    <option value="reverse">Alfabeto Reverso</option>
+                </select>
+                <button onclick="decodeText()" class="button">Decodificar</button>
+                <textarea id="decodedTextDecoder" class="textarea result" rows="4" cols="50" readonly></textarea>
+            </div>
         </div>
     </div>
+
+    <button class="clear-button" onclick="clearInputs()">Limpar Buscas</button>
 
     <script src="script.js"></script>
 </body>

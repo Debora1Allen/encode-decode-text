@@ -6,7 +6,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #b8c0eb;
+    background-color: #cccfe2;
+    color: rgb(109, 108, 108);
 }
 
 .container {
@@ -21,15 +22,17 @@ body {
 }
 
 .textarea {
-    width: 100%;
+    width: 450px;
     padding: 10px;
     margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .select {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+    
 }
 
 .button {
@@ -54,7 +57,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background-color: #c9bcbc;
+    background-color: #a0a5d4;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
